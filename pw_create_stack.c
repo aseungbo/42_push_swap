@@ -6,7 +6,7 @@
 /*   By: seuan <seuan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:35:24 by seuan             #+#    #+#             */
-/*   Updated: 2021/06/15 15:34:06 by seuan            ###   ########.fr       */
+/*   Updated: 2021/06/15 19:52:12 by seuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,31 +27,44 @@ void	del_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-t_stack	*create_node(void)
+t_stack	*insert_node(t_stack **stack, int num)
 {
-	t_stack	*first;
+	t_stack	*new_node;
+	t_stack *tmp;
 
-	first = (t_stack *)malloc(sizeof(t_stack));
-	first->num = 0;
-	first->next = NULL;
-	return (first);
+	new_node = (t_stack *)malloc(sizeof(t_stack));
+	tmp = *stack;
+
+	new_node->next  = tmp;
+    new_node->num   = num;
+    tmp->prev      = new_node;
+
+    // find the last node.
+    while( tmp->next != *stack)
+    {
+        tmp    = tmp->next;
+    }
+
+    new_node->prev  = tmp;
+    tmp->next  = new_node;
+	return (new_node);
 }
 
 t_stack	*args_in_stack(int argc, char **argv)
 {
 	int		i;
-	t_stack	*first;
+	t_stack	*new_node;
 	t_stack	*tmp;
 
 	i = 1;
-	first = create_node();
-	tmp = first;
+	new_node = insert_node();
+	tmp = new_node;
 	while (i < argc)
 	{
 		// 예외처리 값이 들어오면 NULL을 반환시킴.
 		if (check_error(argv[i]))
 		{
-			del_stack(&first);
+			del_stack(&new_node);
 			return (NULL);
 		}
 		// 정상적인 값이 들어오면 argv를 숫자 자료형으로 변환 후 stack에 담는다.
@@ -65,5 +78,5 @@ t_stack	*args_in_stack(int argc, char **argv)
 		}
 		i++;
 	}
-	return (first);
+	return (new_node);
 }

@@ -6,7 +6,7 @@
 /*   By: seuan <seuan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:32:59 by seuan             #+#    #+#             */
-/*   Updated: 2021/06/15 16:51:15 by seuan            ###   ########.fr       */
+/*   Updated: 2021/06/15 19:29:37 by seuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@
 typedef struct		s_stack
 {
 	int				num;
-    // struct s_stack* prev; // 이전 노드를 가리킬 포인터
-    // struct s_stack* next; // 다음 노드를 가리킬 포인터
-	struct s_stack	*next;
+    struct s_stack *prev; // 이전 노드를 가리킬 포인터
+    struct s_stack *next; // 다음 노드를 가리킬 포인터
 }					t_stack;
 
 void    pw_swap(int *a, int *b);
