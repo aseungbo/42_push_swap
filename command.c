@@ -1,14 +1,5 @@
 #include "main.h"
 
-void ft_swap(int *a, int *b)
-{
-	int tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
 int		sab(t_stack **head)
 {
 	t_stack	*stack;
@@ -18,6 +9,7 @@ int		sab(t_stack **head)
 		ft_swap(&stack->num, &stack->next->num);
 	return (0);
 }
+
 
 int		pab(t_stack **head_to, t_stack **head_from)
 {

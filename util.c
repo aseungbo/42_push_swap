@@ -1,5 +1,15 @@
 #include "main.h"
 
+
+void ft_swap(int *a, int *b)
+{
+	int tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
 int ft_strlen(char *str)
 {
 	int len = 0;
@@ -31,4 +41,19 @@ int ft_atoi(const char *str)
 		str++;
 	}
 	return (int)(result * sign);
+}
+
+int		s_len(t_stack *stack)
+{
+	int		len;
+	t_stack	*tmp;
+
+	len = 0;
+	tmp = stack;
+	while (tmp)
+	{
+		tmp = tmp->next;
+		len++;
+	}
+	return (len);
 }
