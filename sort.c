@@ -14,11 +14,11 @@ void A_to_B(t_stack **a_stack, t_stack **b_stack, int len)
 		sort_two(a_stack);
 		return;
 	}
-	if (len == 3)
-	{
-		sort_three(a_stack);
-		return;
-	}
+	// if (len == 3)
+	// {
+	// 	sort_three(a_stack);
+	// 	return;
+	// }
 
 	ra_cnt = 0;
 	pb_cnt = 0;
@@ -29,12 +29,12 @@ void A_to_B(t_stack **a_stack, t_stack **b_stack, int len)
 	{
 		if ((*a_stack)->num > mid)
 		{
-			rab(a_stack);
+			rab(a_stack, 'a'); 
 			ra_cnt += 1;
 		}
 		else
 		{
-			pab(b_stack, a_stack);
+			pab(b_stack, a_stack, 'b');
 			pb_cnt += 1;
 		}
 		i++;
@@ -42,7 +42,7 @@ void A_to_B(t_stack **a_stack, t_stack **b_stack, int len)
 	i = 0;
 	while (i < ra_cnt)
 	{
-		rrab(a_stack);
+		rrab(a_stack, 'a');
 		i++;
 	}
 	A_to_B(a_stack, b_stack, ra_cnt);
@@ -58,7 +58,7 @@ void B_to_A(t_stack **a_stack, t_stack **b_stack, int len)
 	
 	if (len == 1)
 	{
-		pab(a_stack, b_stack);
+		pab(a_stack, b_stack, 'a');
 		return ;
 	}
 
@@ -71,12 +71,12 @@ void B_to_A(t_stack **a_stack, t_stack **b_stack, int len)
 	{
 		if ((*b_stack)->num < mid)
 		{
-			rab(b_stack);
+			rab(b_stack, 'b');
 			rb_cnt += 1;
 		}
 		else
 		{
-			pab(a_stack, b_stack);
+			pab(a_stack, b_stack, 'a');
 			pa_cnt += 1;
 		}
 		i++;
@@ -84,7 +84,7 @@ void B_to_A(t_stack **a_stack, t_stack **b_stack, int len)
 	i = 0;
 	while (i < rb_cnt)
 	{
-		rrab(b_stack);
+		rrab(b_stack, 'b');
 		i++;
 	}
 

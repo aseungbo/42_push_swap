@@ -19,10 +19,10 @@ int ft_atoi(const char *str);
 int	s_len(t_stack *stack);
 
 // command.c
-int sab(t_stack **head);
-int pab(t_stack **head_from, t_stack **head_to);
-int rab(t_stack **head);
-int rrab(t_stack **head);
+int sab(t_stack **head, char c);
+int pab(t_stack **head_from, t_stack **head_to, char c);
+int rab(t_stack **head, char c);
+int rrab(t_stack **head, char c);
 int ss(t_stack **head1, t_stack **head2);
 int rr(t_stack **head1, t_stack **head2);
 int rrr(t_stack **head1, t_stack **head2);

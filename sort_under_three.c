@@ -16,7 +16,7 @@ int sort_two(t_stack **head)
     else
     {
         // puts("\n case2");
-        sab(head);
+        sab(head, 'a');
     }
 
     // n1 = *head;
@@ -45,29 +45,29 @@ int sort_three(t_stack **head)
     else if (n1->num < n3->num && n3->num < n2->num)
     {
         // puts("\n case2");
-        rrab(head);
-        sab(head);
+        rrab(head, 'a');
+        sab(head, 'a');
     }
     else if (n2->num < n1->num && n1->num < n3->num)
     {
         // puts("\n case3");
-        sab(head);
+        sab(head, 'a');
     }
     else if (n2->num < n3->num && n3->num < n1->num)
     {
         // puts("\n case4");
-        rab(head);
+        rab(head, 'a');
     }
     else if (n3->num < n1->num && n1->num < n2->num)
     {
         // puts("\n case5");
-        rrab(head);
+        rrab(head, 'a');
     }
     else if (n3->num < n2->num && n2->num < n1->num)
     {
         // puts("\n case6");
-        sab(head);
-        rrab(head);
+        sab(head, 'a');
+        rrab(head, 'a');
     }
 
     // n1 = *head;

@@ -1,26 +1,47 @@
-SRCS = argv_error_check.c \
-		command.c \
-		create_stack.c \
-		pivot_helper.c \
-		push_swap.c \
-		sort.c \
-		util.c \
-		sort_under_three.c
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: seuan <seuan@student.42seoul.kr>           +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/06/21 15:42:39 by seuan             #+#    #+#              #
+#    Updated: 2021/06/21 16:09:45 by seuan            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-OBJS = ${SRCS:.c=.o}
+NAME 	= push_swap
 
-all: ${OBJS}
-	${CC} -o push_swap ${OBJS}
+CC		= gcc $(CFLAGS) $(leaks) 
 
-.c.o:
-	gcc -Wall -Werror -Wextra -c $< -o ${<:.c=.o}
+RM		= rm -rf
 
-clean:
-	rm -f ${OBJS}
+CLFAGS	= -Wall -Wextra -Werror
 
-fclean: clean
-	rm -f push_swap
+leaks = -g3 -fsanitize=address
 
-re: fclean all
+SRCS	= argv_error_check.c \
+			command.c \
+			create_stack.c \
+			pivot_helper.c \
+			push_swap.c \
+			sort.c \
+			util.c \
+			sort_under_three.c
 
-.PHONY: all clean fclean re
+OBJS 	= $(SRCS:.c=.o)
+
+$(NAME) : $(OBJS)
+	$(CC) $(OBJS) -I push_swap.h -o $(NAME)
+
+all : $(NAME)
+
+clean :
+		$(RM) ./*.o
+
+fclean : clean
+		$(RM) $(NAME)
+
+re : fclean clean all
+
+.PHONY : all fclean clean re

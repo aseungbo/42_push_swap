@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 // void short_sort(t_stack **stack, int len)
 // {
@@ -48,11 +49,13 @@ int main(int argc, char **argv)
 
 	// TEST print all A_stack & B_stack 
 
-	current(stack1, stack2);
+	// current(stack1, stack2);
 
-	A_to_B(&stack1, &stack2, s_len(stack1)); // CMD  
+	A_to_B(&stack1, &stack2, len); // CMD  
 	
-	current(stack1, stack2);
+	// current(stack1, stack2);
+
+	// system("leaks a.out > leaks_result_temp; cat leaks_result_temp | grep leaked" && rm -rf leaks_result_temp);
 
 	// A_to_B(&stack1, &stack2, 8); // CMD  
 	
