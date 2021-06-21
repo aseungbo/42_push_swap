@@ -14,6 +14,7 @@ void A_to_B(t_stack **a_stack, t_stack **b_stack, int len)
 		sort_two(a_stack);
 		return;
 	}
+	
 	// if (len == 3)
 	// {
 	// 	sort_three(a_stack);
