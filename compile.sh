@@ -1,1 +1,0 @@
-gcc main.* command.c util.c

@@ -1,22 +1,17 @@
 #include "main.h"
 
-
-int		sab(t_stack **head, char c)
+int		sab(t_stack **head)
 {
 	t_stack	*stack;
 
 	stack = *head;
 	if (stack && stack->next)
 		ft_swap(&stack->num, &stack->next->num);
-	if (c == 'a')
-		write(1, "sa\n", 3);
-	else if (c == 'b')
-		write(1, "sb\n", 3);
 	return (0);
 }
 
 
-int		pab(t_stack **head_to, t_stack **head_from, char c)
+int		pab(t_stack **head_to, t_stack **head_from)
 {
 	t_stack	*tmp;
 	t_stack	*to;
@@ -40,14 +35,10 @@ int		pab(t_stack **head_to, t_stack **head_from, char c)
 		tmp->next = to;
 		*head_to = tmp;
 	}
-	if (c == 'a')
-		write(1, "pa\n", 3);
-	else if (c == 'b')
-		write(1, "pb\n", 3);
 	return (0);
 }
 
-int		rab(t_stack **head, char c)
+int		rab(t_stack **head)
 {
 	t_stack	*tmp_first;
 	t_stack	*tmp_last;
@@ -66,14 +57,10 @@ int		rab(t_stack **head, char c)
 	tmp_last->next = tmp_first;
 	tmp_first->next = NULL;
 	*head = stack;
-	if (c == 'a')
-		write(1, "ra\n", 3);
-	else if (c == 'b')
-		write(1, "rb\n", 3);
 	return (0);
 }
 
-int		rrab(t_stack **head, char c)
+int		rrab(t_stack **head)
 {
 	t_stack	*tmp_last;
 	t_stack	*previous;
@@ -91,33 +78,26 @@ int		rrab(t_stack **head, char c)
 	tmp_last->next = stack;
 	previous->next = NULL;
 	*head = tmp_last;
-	if (c == 'a')
-		write(1, "rra\n", 4);
-	else if (c == 'b')
-		write(1, "rrb\n", 4);
 	return (0);
 }
 
 int		ss(t_stack **stack1, t_stack **stack2)
 {
-	// sab(stack1);
-	// sab(stack2);
-	// write(1, "ss\n", 3);
+	sab(stack1);
+	sab(stack2);
 	return (0);
 }
 
 int		rr(t_stack **stack1, t_stack **stack2)
 {
-	// rab(stack1);
-	// rab(stack2);
-	// write(1, "rr\n", 3);
+	rab(stack1);
+	rab(stack2);
 	return (0);
 }
 
 int		rrr(t_stack **stack1, t_stack **stack2)
 {
-	// rrab(stack1);
-	// rrab(stack2);
-	// write(1, "rrr\n", 4);
+	rrab(stack1);
+	rrab(stack2);
 	return (0);
 }
