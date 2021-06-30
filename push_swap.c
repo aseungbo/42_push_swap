@@ -68,6 +68,11 @@ int main(int argc, char **argv)
 		sort_two(&stack1);
 	else if (len == 3)
 		sort_three(&stack1);
+	else if (len == 5)
+	{
+		printf("exec!\n");
+		sort_five(&stack1, &stack2);
+	}
 	else
 		A_to_B(&stack1, &stack2, s_len(stack1)); // CMD  
 

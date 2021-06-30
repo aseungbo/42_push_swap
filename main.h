@@ -52,5 +52,9 @@ int is_duplicate_num(t_stack **head);
 //sort_under_three.c
 int sort_two(t_stack **head);
 int sort_three(t_stack **head);
+int sort_five(t_stack **stack1, t_stack **stack2);
+
+// FIX
+void current(t_stack *stack1, t_stack *stack2); // only test!!
 
 #endif
