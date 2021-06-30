@@ -59,3 +59,36 @@ int is_error(char *str)
 		return (1);
 	return (0);
 }
+
+int	is_sorted_stack(t_stack **head)
+{
+	t_stack *n1 = *head;
+    t_stack *n2 = n1->next;
+
+	while (s_len(n1) - 1)
+	{
+		if (n1->num > n2->num)
+			return (0);
+		n1 = n1->next;
+		n2 = n2->next;
+	}
+	return (1);
+}
+
+int is_duplicate_num(t_stack **head)
+{
+	t_stack *n1 = *head;
+	t_stack *n2 = n1->next;
+
+	while (s_len(n1))
+	{
+		while (s_len(n2))
+		{
+			if (n2->num == n1->num)
+				return (1);
+			n2 = n2->next;
+		}
+		n1 = n1->next;
+	}
+	return (0);
+}
