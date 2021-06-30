@@ -46,6 +46,8 @@ int		partition(int *stack1, int start, int end);
 int is_int_overflow(char *str);
 int is_num(int k);
 int is_error(char *str);
+int	is_sorted_stack(t_stack **head);
+int is_duplicate_num(t_stack **head);
 
 //sort_under_three.c
 int sort_two(t_stack **head);
