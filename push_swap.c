@@ -48,11 +48,17 @@ int main(int argc, char **argv)
 
 	// TEST print all A_stack & B_stack 
 
-	current(stack1, stack2);
+	// current(stack1, stack2);
+
+	if (len == 3)
+	{
+		sort_three(&stack1);
+		return (0);
+	}
 
 	A_to_B(&stack1, &stack2, s_len(stack1)); // CMD  
 	
-	current(stack1, stack2);
+	// current(stack1, stack2);
 
 	// A_to_B(&stack1, &stack2, 8); // CMD  
 	
@@ -77,8 +83,5 @@ int main(int argc, char **argv)
 	// A_to_B(&stack1, &stack2, 3); // CMD  
 	
 	// current(stack1, stack2);
-
-
-
 
 }

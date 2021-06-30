@@ -27,9 +27,7 @@ int is_int_overflow(char *str)
 
 int is_num(int k)
 {
-	if (k == '0' || k == '1' || k == '2' || k == '3' || k == '4')
-		return (1);
-	if (k == '5' || k == '6' || k == '7' || k == '8' || k == '9')
+	if (k == '0' || k == '1' || k == '2' || k == '3' || k == '4' || k == '5' || k == '6' || k == '7' || k == '8' || k == '9')
 		return (1);
 	return (0);
 }
