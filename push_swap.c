@@ -1,10 +1,5 @@
 #include "main.h"
 
-// void short_sort(t_stack **stack, int len)
-// {
-// 	if (len == 1)
-// 		return ;
-// }
 void current(t_stack *stack1, t_stack *stack2)
 {
 	t_stack *temp = stack1;

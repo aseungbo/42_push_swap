@@ -5,26 +5,12 @@ int sort_two(t_stack **head)
     t_stack *n1 = *head;
     t_stack *n2 = n1->next;
 
-    // printf("\n------ before ------\n");
-    // printf("n1: %d\n", n1->num);
-    // printf("n2: %d\n", n2->num);
-
-    if (n1->num < n2->num)
+    if (n1->num > n2->num)
     {
-        // puts("\n case1");
-    }
-    else
-    {
-        // puts("\n case2");
         sab(head);
         write(1, "sa\n", 3);
     }
 
-    // n1 = *head;
-    // n2 = n1->next;
-    // printf("\n------ after ------\n");
-    // printf("n1: %d\n", n1->num);
-    // printf("n2: %d\n", n2->num);
     return (1);
 }
 
