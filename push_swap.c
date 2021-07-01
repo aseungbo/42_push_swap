@@ -35,12 +35,13 @@ int main(int argc, char **argv)
 		return (0);
 	}
 
-	// 이미 정렬이 완료된 스택인 경우 에러 처리.
-	if (is_sorted_stack(&stack1))
-	{
-		write(2, "Error\n", 6);
+	// 아무 인자 없이 실행파일만 실행된 경우 , 에러 표시 없이 종료.
+	if (argc == 1)
 		return (0);
-	}
+
+	// 이미 정렬이 완료된 스택인 경우 , 프로그램이 아무것도 표시하지 않아야 함.
+	if (is_sorted_stack(&stack1))
+		return (0);
 
 	// 중복된 수인 경우 에러 처리
 	if (is_duplicate_num(&stack1))
@@ -61,6 +62,6 @@ int main(int argc, char **argv)
 	else
 		A_to_B(&stack1, &stack2, s_len(stack1));
 
-	current(stack1, stack2);
+	// current(stack1, stack2);
 	return (0);
 }
