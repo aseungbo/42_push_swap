@@ -11,7 +11,7 @@ int		sab(t_stack **head)
 }
 
 
-int		pab(t_stack **head_to, t_stack **head_from)
+int		pab(t_stack **head_from, t_stack **head_to)
 {
 	t_stack	*tmp;
 	t_stack	*to;

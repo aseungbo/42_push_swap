@@ -30,7 +30,7 @@ void A_to_B(t_stack **a_stack, t_stack **b_stack, int len)
 		}
 		else
 		{
-			pab(b_stack, a_stack);
+			pab(a_stack, b_stack);
 			write(1, "pb\n", 3);
 			pb_cnt += 1;
 		}
@@ -56,7 +56,7 @@ void B_to_A(t_stack **a_stack, t_stack **b_stack, int len)
 	
 	if (len == 1)
 	{
-		pab(a_stack, b_stack);
+		pab(b_stack, a_stack);
 		write(1, "pa\n", 3);
 		return ;
 	}
@@ -76,7 +76,7 @@ void B_to_A(t_stack **a_stack, t_stack **b_stack, int len)
 		}
 		else
 		{
-			pab(a_stack, b_stack);
+			pab(b_stack, a_stack);
 			write(1, "pa\n", 3);
 			pa_cnt += 1;
 		}

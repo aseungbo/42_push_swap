@@ -107,7 +107,7 @@ int sort_five(t_stack **stack1, t_stack **stack2)
         }
         else if (tmp->num < pivot)
         {
-            pab(stack2, stack1);
+            pab(stack1, stack2);
             tmp = *stack1;
             current(*stack1, *stack2);
         }
@@ -120,8 +120,8 @@ int sort_five(t_stack **stack1, t_stack **stack2)
     if (tmp2->num < tmp2->next->num)
         sab(stack2);
     
-    pab(stack1, stack2);
-    pab(stack1, stack2);
+    pab(stack2, stack1);
+    pab(stack2, stack1);
     current(*stack1, *stack2);
 
     return (0);
