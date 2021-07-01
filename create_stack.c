@@ -6,7 +6,6 @@ t_stack *create_new_node(void)
 
 	first = (t_stack *)malloc(sizeof(t_stack));
 	first->num = 0;
-	first->prev = NULL;
 	first->next = NULL;
 	return (first);
 }
@@ -52,7 +51,6 @@ t_stack *copy_args_in_stack(int argc, char **argv)
 		if (i < argc - 1)
 		{
 			tmp->next = create_new_node();
-			tmp->next->prev = tmp;
 			tmp = tmp->next;
 		}
 		i++;

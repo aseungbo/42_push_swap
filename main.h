@@ -7,9 +7,8 @@
 
 typedef struct s_stack
 {
-	int num;
-	struct s_stack *prev;
-	struct s_stack *next;
+	int 			num;
+	struct s_stack	*next;
 }				t_stack;
 
 // util.c
