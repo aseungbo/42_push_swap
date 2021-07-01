@@ -56,11 +56,9 @@ int sort_three(t_stack **head)
 int sort_five(t_stack **stack1, t_stack **stack2)
 {
     int pivot = find_mid_value(*stack1, 5);
-    printf("aaaaaaa%d\n", pivot);
     t_stack *tmp = *stack1;
     t_stack *tmp2;
 
-    current(*stack1, *stack2);
     int i = 0;
     while (i < 5)
     {
@@ -68,26 +66,20 @@ int sort_five(t_stack **stack1, t_stack **stack2)
         {
             tmp = tmp->next;
             rab(stack1);
-            current(*stack1, *stack2);
         }
         else if (tmp->num < pivot)
         {
             pab(stack1, stack2);
             tmp = *stack1;
-            current(*stack1, *stack2);
         }
-
         i++;
     }
     sort_three(stack1);
-
     tmp2 = *stack2;
     if (tmp2->num < tmp2->next->num)
         sab(stack2);
-    
     pab(stack2, stack1);
     pab(stack2, stack1);
-    current(*stack1, *stack2);
 
     return (0);
 }
