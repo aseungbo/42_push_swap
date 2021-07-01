@@ -99,15 +99,17 @@ int sort_five(t_stack **stack1, t_stack **stack2)
     int i = 0;
     while (i < 5)
     {
-        if (tmp->num > pivot)
+        if (tmp->num >= pivot)
         {
             tmp = tmp->next;
             rab(stack1);
+            current(*stack1, *stack2);
         }
         else if (tmp->num < pivot)
         {
             pab(stack2, stack1);
             tmp = *stack1;
+            current(*stack1, *stack2);
         }
 
         i++;
