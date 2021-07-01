@@ -18,13 +18,13 @@ int ft_atoi(const char *str);
 int	s_len(t_stack *stack);
 
 // command.c
-int sab(t_stack **head);
-int pab(t_stack **head_from, t_stack **head_to);
-int rab(t_stack **head);
-int rrab(t_stack **head);
-int ss(t_stack **head1, t_stack **head2);
-int rr(t_stack **head1, t_stack **head2);
-int rrr(t_stack **head1, t_stack **head2);
+int sab(t_stack **head, char type);
+int pab(t_stack **head_from, t_stack **head_to, char type);
+int rab(t_stack **head, char type);
+int rrab(t_stack **head, char type);
+// int ss(t_stack **head1, t_stack **head2);
+// int rr(t_stack **head1, t_stack **head2);
+// int rrr(t_stack **head1, t_stack **head2);
 
 // sort.c
 void A_to_B(t_stack **a_stack, t_stack **b_stack, int len);

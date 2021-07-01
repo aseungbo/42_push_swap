@@ -57,14 +57,10 @@ int main(int argc, char **argv)
 	else if (len == 3)
 		sort_three(&stack1);
 	else if (len == 5)
-	{
-		printf("exec!\n");
 		sort_five(&stack1, &stack2);
-	}
 	else
-	{
 		A_to_B(&stack1, &stack2, s_len(stack1));
-		current(stack1, stack2);
-	}
+
+	current(stack1, stack2);
 	return (0);
 }
