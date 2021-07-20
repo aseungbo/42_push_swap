@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   util3.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuan <seuan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/20 14:35:16 by seuan             #+#    #+#             */
-/*   Updated: 2021/07/20 14:35:16 by seuan            ###   ########.fr       */
+/*   Created: 2021/07/20 14:35:27 by seuan             #+#    #+#             */
+/*   Updated: 2021/07/20 14:35:27 by seuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_process(t_stack **stack1, t_stack **stack2, int len)
+int	len_of_argv_arr(char **str)
 {
-	if (len == 2)
-		sort_two(stack1);
-	else if (len == 3)
-		sort_three(stack1);
-	else if (len == 5)
-		sort_five(stack1, stack2);
-	else
-		a_to_b(stack1, stack2, len_stack(*stack1));
+	int	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
+
+void	all_free(char **rst)
+{
+	int	i;
+
+	i = 0;
+	while (rst[i])
+	{
+		free(rst[i]);
+		i++;
+	}
+	free(rst);
 }

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_elem_two.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuan <seuan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/20 14:35:16 by seuan             #+#    #+#             */
-/*   Updated: 2021/07/20 14:35:16 by seuan            ###   ########.fr       */
+/*   Created: 2021/07/20 14:35:11 by seuan             #+#    #+#             */
+/*   Updated: 2021/07/20 14:35:12 by seuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_process(t_stack **stack1, t_stack **stack2, int len)
+int	sort_two(t_stack **head)
 {
-	if (len == 2)
-		sort_two(stack1);
-	else if (len == 3)
-		sort_three(stack1);
-	else if (len == 5)
-		sort_five(stack1, stack2);
-	else
-		a_to_b(stack1, stack2, len_stack(*stack1));
+	t_stack	*n1;
+	t_stack	*n2;
+
+	n1 = *head;
+	n2 = n1->next;
+	if (n1->num > n2->num)
+		sab(head, 'a');
+	return (1);
 }

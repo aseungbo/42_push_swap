@@ -1,8 +1,20 @@
-#include "main.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create_stack.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seuan <seuan@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/20 14:34:17 by seuan             #+#    #+#             */
+/*   Updated: 2021/07/20 14:34:18 by seuan            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-t_stack *create_new_node(void)
+#include "push_swap.h"
+
+t_stack	*create_new_node(void)
 {
-	t_stack *first;
+	t_stack	*first;
 
 	first = (t_stack *)malloc(sizeof(t_stack));
 	first->num = 0;
@@ -10,10 +22,10 @@ t_stack *create_new_node(void)
 	return (first);
 }
 
-void stack_del(t_stack *head)
+void	stack_del(t_stack *head)
 {
-	t_stack *tmp1;
-	t_stack *tmp2;
+	t_stack	*tmp1;
+	t_stack	*tmp2;
 
 	tmp1 = head;
 	tmp2 = head;
@@ -24,36 +36,78 @@ void stack_del(t_stack *head)
 		tmp2 = tmp1;
 	}
 	head = NULL;
+	free(head);
 }
 
-t_stack *copy_args_in_stack(int argc, char **argv)
+int	when_argv_many_num(t_global *global, \
+				char **rst, t_stack **head, t_stack **tmp)
 {
-	// 처음 받은 인자를 스택에 넣는 로직.
-	int i;
-	t_stack *head;
-	t_stack *tmp;
+	int		i;
+	int		len;
 
-	i = 1;
-	head = create_new_node();
-	tmp = head;
-	while (i < argc)
+	i = 0;
+	len = len_of_argv_arr(rst);
+	if (global->idx == len_of_argv_arr(global->argv) - 1)
+		len = len - 1;
+	while (i < len)
 	{
-		// 에러 인자값이 들어오는 경우 기존에 할당한 메모리 해제.
-		if (is_error(argv[i]))
+		if (is_error(rst[i]))
 		{
-			stack_del(head);
-			return (NULL);
+			stack_del(*head);
+			return (1);
 		}
-
-		tmp->num = ft_atoi(argv[i]);
-
-		// 새 노드를 생성해가면서 양방향 바인딩.
-		if (i < argc - 1)
+		(*tmp)->num = ft_atoi(rst[i]);
+		if (i < len)
 		{
-			tmp->next = create_new_node();
-			tmp = tmp->next;
+			(*tmp)->next = create_new_node();
+			(*tmp) = (*tmp)->next;
 		}
 		i++;
+	}
+	return (0);
+}
+
+int	when_argv_one_num(int i, char **argv, t_stack **head, t_stack **tmp)
+{
+	if (is_error(argv[i]))
+	{
+		stack_del(*head);
+		return (1);
+	}
+	(*tmp)->num = ft_atoi(argv[i]);
+	if (i < len_of_argv_arr(argv) - 1)
+	{
+		(*tmp)->next = create_new_node();
+		(*tmp) = (*tmp)->next;
+	}
+	return (0);
+}
+
+t_stack	*copy_args_in_stack(int argc, t_global *global)
+{
+	int		i;
+	char	**rst;
+	t_stack	*head;
+	t_stack	*tmp;
+
+	i = 0;
+	head = create_new_node();
+	tmp = head;
+	while (++i < argc)
+	{
+		global->idx = i;
+		rst = ft_split(global->argv[i], ' ');
+		if ((len_of_argv_arr(rst)) > 1)
+		{
+			if (when_argv_many_num(global, rst, &head, &tmp))
+				return (0);
+		}
+		else
+		{
+			if (when_argv_one_num(i, global->argv, &head, &tmp))
+				return (0);
+		}
+		all_free(rst);
 	}
 	return (head);
 }

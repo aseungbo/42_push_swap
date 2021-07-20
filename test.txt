@@ -1,0 +1,74 @@
+./util3.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:   3, col:   5):	extra tabs before function name
+./create_stack.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:   3, col:   9):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  13, col:   9):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  30, col:   9):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  58, col:   9):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  74, col:   9):	extra tabs before function name
+./util.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:   3, col:  13):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  12, col:  13):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  22, col:  13):	extra tabs before function name
+Error: RETURN_PARENTHESIS   (line:  43, col:  17):	Return value must be in parenthesis
+Error: TOO_MANY_TABS_FUNC   (line:  46, col:  13):	extra tabs before function name
+./push_swap.h: Error!
+Error: TAB_REPLACE_SPACE    (line:   6, col:   1):	Found tab when expecting space
+Error: TAB_REPLACE_SPACE    (line:  13, col:   1):	Found tab when expecting space
+Error: TAB_REPLACE_SPACE    (line:  19, col:   1):	Found tab when expecting space
+./pivot_helper.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:   3, col:   9):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  15, col:   9):	extra tabs before function name
+Error: SPACE_AFTER_KW       (line:  20, col:  14):	Missing space after keyword
+Error: TOO_MANY_TABS_FUNC   (line:  31, col:   9):	extra tabs before function name
+./sort.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:   3, col:  13):	extra tabs before function name
+./command.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:   3, col:   9):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  11, col:   9):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  25, col:   9):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  53, col:   9):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  79, col:   9):	extra tabs before function name
+./sort_elem_two.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:   3, col:   9):	extra tabs before function name
+Error: SPACE_REPLACE_TAB    (line:   5, col:  12):	Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:   6, col:  12):	Found space when expecting tab
+./sort_elem_five.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:   3, col:   9):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  14, col:   9):	extra tabs before function name
+Error: SPACE_REPLACE_TAB    (line:  16, col:  12):	Found space when expecting tab
+Error: TOO_MANY_TABS_FUNC   (line:  36, col:   9):	extra tabs before function name
+Error: SPACE_REPLACE_TAB    (line:  38, col:  12):	Found space when expecting tab
+./sort_elem_three.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:   3, col:   9):	extra tabs before function name
+Error: SPACE_REPLACE_TAB    (line:   5, col:  12):	Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:   6, col:  12):	Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:   7, col:  12):	Found space when expecting tab
+./push_swap.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:   3, col:   9):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:   9, col:   9):	extra tabs before function name
+Error: ASSIGN_IN_CONTROL    (line:  18, col:  18):	Assignment in control structure
+Error: EMPTY_LINE_FUNCTION  (line:  31, col:  10):	Empty line in function
+./argv_error_check.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:   3, col:   9):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  27, col:   9):	extra tabs before function name
+Error: EOL_OPERATOR         (line:  29, col:  54):	Logic operator at the end of line
+Error: TOO_FEW_TAB          (line:  30, col:   5):	Missing tabs for indent level
+Error: TOO_MANY_TABS_FUNC   (line:  35, col:   9):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  59, col:   9):	extra tabs before function name
+Error: SPACE_REPLACE_TAB    (line:  61, col:  12):	Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  62, col:  12):	Found space when expecting tab
+Error: TOO_MANY_TABS_FUNC   (line:  84, col:   9):	extra tabs before function name
+Error: SPACE_REPLACE_TAB    (line:  86, col:  12):	Found space when expecting tab
+./util2.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:   3, col:  13):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  22, col:  13):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  41, col:  13):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  55, col:  13):	extra tabs before function name
+Error: ASSIGN_IN_CONTROL    (line:  70, col:  26):	Assignment in control structure
+./sort_elem_all.c: Error!
+Error: TOO_MANY_TABS_FUNC   (line:   3, col:  13):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  29, col:  13):	extra tabs before function name
+Error: TOO_MANY_TABS_FUNC   (line:  44, col:  13):	extra tabs before function name
+Error: SPACE_REPLACE_TAB    (line:  48, col:  16):	Found space when expecting tab
+Error: TOO_MANY_TABS_FUNC   (line:  68, col:  13):	extra tabs before function name
