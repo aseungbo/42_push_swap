@@ -6,23 +6,23 @@
 /*   By: seuan <seuan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:34:48 by seuan             #+#    #+#             */
-/*   Updated: 2021/07/20 16:21:30 by seuan            ###   ########.fr       */
+/*   Updated: 2021/07/20 19:35:57 by seuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	a_to_b(t_stack **a_stack, t_stack **b_stack, int len)
+void	a_to_b(t_stack **a_stack, t_stack **b_stack, int len, t_global *global)
 {
 	int			mid;
 	int			i;
 	t_cnt_state	cnt_state;
 
-	if (len == 1)
-		return ;
-	if (len == 2)
+	if (len == 1 || len == 2)
 	{
-		sort_two(a_stack);
+		global->flag = 1;
+		if (len == 2)
+			sort_two(a_stack);
 		return ;
 	}
 	cnt_state.ra_cnt = 0;
@@ -32,10 +32,10 @@ void	a_to_b(t_stack **a_stack, t_stack **b_stack, int len)
 	while (++i < len)
 		a_to_b_sub(&cnt_state, &mid, a_stack, b_stack);
 	i = -1;
-	while (++i < cnt_state.ra_cnt)
+	while (global->flag == 1 && ++i < cnt_state.ra_cnt)
 		rrab(a_stack, 'a');
-	a_to_b(a_stack, b_stack, cnt_state.ra_cnt);
-	b_to_a(a_stack, b_stack, cnt_state.pb_cnt);
+	a_to_b(a_stack, b_stack, cnt_state.ra_cnt, global);
+	b_to_a(a_stack, b_stack, cnt_state.pb_cnt, global);
 }
 
 void	a_to_b_sub(t_cnt_state *cnt_state, \
@@ -53,7 +53,7 @@ void	a_to_b_sub(t_cnt_state *cnt_state, \
 	}
 }
 
-void	b_to_a(t_stack **a_stack, t_stack **b_stack, int len)
+void	b_to_a(t_stack **a_stack, t_stack **b_stack, int len, t_global *global)
 {
 	int			mid;
 	int			i;
@@ -73,8 +73,8 @@ void	b_to_a(t_stack **a_stack, t_stack **b_stack, int len)
 	i = -1;
 	while (++i < cnt_state.rb_cnt)
 		rrab(b_stack, 'b');
-	a_to_b(a_stack, b_stack, cnt_state.pa_cnt);
-	b_to_a(a_stack, b_stack, cnt_state.rb_cnt);
+	a_to_b(a_stack, b_stack, cnt_state.pa_cnt, global);
+	b_to_a(a_stack, b_stack, cnt_state.rb_cnt, global);
 }
 
 void	b_to_a_sub(t_cnt_state *cnt_state, \
