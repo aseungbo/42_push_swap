@@ -6,7 +6,7 @@
 /*   By: seuan <seuan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:34:34 by seuan             #+#    #+#             */
-/*   Updated: 2021/07/20 14:34:36 by seuan            ###   ########.fr       */
+/*   Updated: 2021/07/20 15:51:32 by seuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 
 	global.argv = argv;
 	global.argc = argc;
-	stack1 = copy_args_in_stack(argc, &global);
+	stack1 = argv_to_stack(argc, &global);
 	if (!(stack1))
 		return (print_error());
 	if (argc == 1)

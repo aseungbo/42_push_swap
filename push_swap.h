@@ -6,7 +6,7 @@
 /*   By: seuan <seuan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:34:42 by seuan             #+#    #+#             */
-/*   Updated: 2021/07/20 14:34:43 by seuan            ###   ########.fr       */
+/*   Updated: 2021/07/20 15:45:07 by seuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void				b_to_a_sub(t_cnt_state *cnt_state, \
 void				sort_process(t_stack **stack1, t_stack **stack2, int len);
 t_stack				*create_new_node(void);
 void				stack_del(t_stack *head);
-t_stack				*copy_args_in_stack(int argc, t_global *global);
+t_stack				*argv_to_stack(int argc, t_global *global);
 int					find_mid_value(t_stack *stack, int len);
 int					*create_array_from_list(t_stack *stack, int len);
 void				bubble_sort(int *stack1, int count);

@@ -6,7 +6,7 @@
 /*   By: seuan <seuan@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:34:17 by seuan             #+#    #+#             */
-/*   Updated: 2021/07/20 14:34:18 by seuan            ###   ########.fr       */
+/*   Updated: 2021/07/20 15:45:22 by seuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	when_argv_one_num(int i, char **argv, t_stack **head, t_stack **tmp)
 	return (0);
 }
 
-t_stack	*copy_args_in_stack(int argc, t_global *global)
+t_stack	*argv_to_stack(int argc, t_global *global)
 {
 	int		i;
 	char	**rst;
